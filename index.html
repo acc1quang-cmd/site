@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Định Yên - Di Sản Số</title>
+    <style>
+        :root { --gold: #c5a059; --dark: #050d21; --text: #f0f0f0; }
+        body { margin: 0; background: var(--dark); color: var(--text); font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+        
+        /* Hiệu ứng mượt mà cho Section */
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Hero */
+        .hero { background: linear-gradient(rgba(5,13,33,0.8), rgba(5,13,33,0.8)), url('https://mia.vn/media/uploads/blog-du-lich/lang-chieu-dinh-yen-10-1701314643.jpg'); background-size: cover; text-align: center; }
+        .hero h1 { font-size: 4rem; letter-spacing: 5px; color: var(--gold); }
+
+        /* Payment Card */
+        .payment-box { background: rgba(255,255,255,0.05); border: 1px solid var(--gold); padding: 30px; border-radius: 15px; margin-top: 40px; max-width: 500px; line-height: 1.8; }
+
+        /* Footer Vinpearl Style */
+        footer { background: #020817; padding: 80px 50px; border-top: 3px solid var(--gold); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1 class="reveal">ĐỊNH YÊN</h1>
+        <p class="reveal">DI SẢN VĂN HÓA PHI VẬT THỂ QUỐC GIA</p>
+        <div class="payment-box reveal">
+            <h3 style="margin-top:0">THÔNG TIN ĐƠN VỊ</h3>
+            <div>Chủ tài khoản: <strong>Công ty cổ phần tổ 2</strong></div>
+            <div>Số tài khoản: <strong>0327221519</strong></div>
+            <div>Ngân hàng: <strong>MB BANK QUÂN ĐỘI NHÂN DÂN</strong></div>
+        </div>
+    </section>
+
+    <section id="story">
+        <h2 class="reveal">Hơn 100 năm gìn giữ hồn đất</h2>
+        <p class="reveal" style="max-width: 700px; text-align: center;">
+            Từ những sợi lác nhuộm đỏ rực, xanh biếc phơi mình dưới nắng, đến những đôi bàn tay dệt nên tấm chiếu vảy ốc tinh xảo. 
+            Tất cả tạo nên một định danh văn hóa không thể trộn lẫn của vùng đất Đồng Tháp.
+        </p>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Khám Phá</h4>
+                <p>Hành trình di sản</p>
+                <p>Văn hóa Chợ Ma</p>
+            </div>
+            <div class="footer-col">
+                <h4>Pháp Lý</h4>
+                <p>Chính sách bảo mật</p>
+                <p>Điều khoản sử dụng</p>
+            </div>
+            <div class="footer-col" style="text-align: right;">
+                <img src="https://vinpearl.com/themes/custom/vinpearl/img/da-thong-bao.png" width="150">
+                <p style="font-size: 12px; opacity: 0.5; margin-top:20px;">Copyright © 2026 DINH YEN HERITAGE.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hiệu ứng cuộn trang để hiện nội dung (Không bị tĩnh)
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+            });
+        });
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
